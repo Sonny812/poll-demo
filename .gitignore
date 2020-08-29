@@ -1,3 +1,7 @@
+###> poll bundle development ###
+/config/packages/poll_demo.yaml
+###< poll bundle development ###
+
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
