@@ -25,6 +25,7 @@
 {% endblock form_widget_simple %}
 
 {% block form_label -%}
+    {% set element = 'h4' %}
     {%- set label_attr = label_attr|merge({class: (label_attr.class|default(''))|trim}) -%}
     {{- parent() -}}
 {%- endblock form_label %}
@@ -79,7 +80,7 @@
 {%- block choice_widget_expanded -%}
     <div {{ block('widget_container_attributes') }}>
         {%- for child in form %}
-            <label>
+            <label class="checkbox-container">
                 {{- form_widget(child) -}}
                 {{- form_label(child, null, {translation_domain: choice_translation_domain}) -}}
             </label>

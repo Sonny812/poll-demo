@@ -1,5 +1,31 @@
 @import "~materialize-css/sass/materialize";
+@import "form_theme";
 
 body {
-    background-color: lightgray;
+  background-color: lightgray;
 }
+
+.poll {
+  height: 520px;
+  position: relative;
+}
+
+.question-body {
+  height: 300px;
+  overflow: auto;
+}
+
+.buttons {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.question {
+  display: none;
+}
+
+.question.active {
+  display: block;
+}
+

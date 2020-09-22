@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="poll">
+        {{ form_start(form, {'attr': {
+            'novalidate': 'novalidate'
+        }}) }}
+        {% for field in form %}
+            <div
+                    class="question {% if loop.first %}active{% endif %}"
+                    data-field-type="{{ field.vars.block_prefixes[1] }}"
+                    {% if field.vars.required %}data-required="true"{% endif %}>
+                <div class="row">
+                    <div class="col s12">
+                        {{ form_label(field) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <div class="question-body">
+                            {{ form_widget(field) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="row">
+            <div class="buttons">
+                <div class="col s12">
+                    <button class="btn js-question-prev hide" type="button">
+                        <i class="material-icons left">arrow_back</i> Previous
+                    </button>
+                    <button class="btn js-question-next" type="button">
+                        <i class="material-icons right">arrow_forward</i> Next
+                    </button>
+                    <button class="btn js-poll-submit hide" type="submit">
+                        <i class="material-icons right">send</i> Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
